@@ -29,7 +29,11 @@ Launch the reporting script and provide a label for your extract (e.g the tenant
 
 ``` shell
 cd showoci_cloudshell
-./showoci_cloudshell_extract_all_to-xlsx.sh mytenant
+./showoci_report_to_xlsx.sh mytenant
 ```
 
-you will find
+At the end of showoci script execution, you will find in the `showoci_cloudshell/report/mytenant` folder:
+
+- an excel file will the collected data loaded from the CSV files
+- an archive containing all the csv files
+- an archive containing all the json files
