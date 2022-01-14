@@ -7,14 +7,14 @@
     showoci_cloudshell_dir: "{{ lookup('env', 'HOME') }}/showoci_cloudshell"
 
   tasks:
-    - name: showoci | ensure showoci directory are present
+    - name: showoci | ensure showoci directories are present
       ansible.builtin.file:
         path: "{{ item }}"
         state: directory
         mode: '0755'
       with_items:
       - "{{ showoci_cloudshell_dir }}"
-      - "{{ showoci_cloudshell_dir }}/report"
+      - "{{ showoci_cloudshell_dir }}/reports"
 
     - name: showoci | ensure showoci base dir and additional scripts are present
       copy:

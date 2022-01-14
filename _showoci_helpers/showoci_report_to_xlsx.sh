@@ -14,7 +14,7 @@
 
 DATE=`date '+%Y-%m-%d_%H-%M'`
 APPDIR=${HOME}/showoci_cloudshell
-REPORT_DIR=${APPDIR}/report/${1}
+REPORT_DIR=${APPDIR}/reports/${1}
 CSV_DIR=${REPORT_DIR}/csv
 JSON_DIR=${REPORT_DIR}/json
 
