@@ -13,7 +13,7 @@
 #   $./showoci_extract_all_to-csv.sh mytenant
 
 DATE=`date '+%Y-%m-%d_%H-%M'`
-APPDIR=/${HOME}/showoci_cloudshell
+APPDIR=${HOME}/showoci_cloudshell
 REPORT_DIR=${APPDIR}/report/${1}
 CSV_DIR=${REPORT_DIR}/csv
 JSON_DIR=${REPORT_DIR}/json
