@@ -2,9 +2,6 @@
 
 - name: Preparing the base environment
   hosts: all
-  
-  vars:
-    timezone: 
 
   tasks:
     - name: Ensure python additional modules for showoci are present | pandas, xlsxwriter

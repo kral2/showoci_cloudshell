@@ -6,11 +6,11 @@
 #   -mc: Compartment 'ManagedCompartmentForPaaS' is excluded
 #   -csv: export to CSV files
 #
-#   showoci_extract_all_to-csv.sh arguments:
+#   showoci_report_to_xlsx.sh arguments:
 #   $1 is the prefix for CSV files naming (mandatory argument)
 #
 #   sample command:
-#   $./showoci_extract_all_to-csv.sh mytenant
+#   $./showoci_report_to_xlsx.sh mytenant
 
 DATE=`date '+%Y-%m-%d_%H-%M'`
 APPDIR=${HOME}/showoci_cloudshell
@@ -30,7 +30,7 @@ if [ "$#" -eq 0 ]; then
     echo "Please provide script arguments:"
     echo "1st argument (mandatory): CSV filenames prefix"
     echo "sample command:"
-    echo "./showoci_extract_all_to-csv.sh mytenant"
+    echo "./showoci_report_to_xlsx.sh mytenant"
     exit 1
 fi
 
@@ -44,7 +44,7 @@ echo "##########################################################################
 echo "# Start running showoci at `date`"
 echo "# Job Run Output File = $OUTPUT_FILE"
 echo "# CSV    File Prefix = $CSV_FILE"
-echo "# csv output files created in $CSV_DIR for each service (csv_compute,csv_database,etc)"
+echo "# csv output files created in $CSV_DIR for each service (csv_compute, csv_database, etc.)"
 echo "# xlsx output file created in ${REPORT_DIR}"
 echo "###################################################################################"
 echo "Please Wait ..."
