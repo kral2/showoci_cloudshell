@@ -1,0 +1,10 @@
+---
+
+# This playbook install showoci and its prereqs on an OCI cloudshell session
+
+- name: Install Prereqs
+  import_playbook: install_base.yml
+
+- name: Install showoci
+  import_playbook: install_showoci.yml
+...

@@ -1,0 +1,5 @@
+# Ignored files
+*gitignore*.tf
+
+.DS_Store
+.vscode

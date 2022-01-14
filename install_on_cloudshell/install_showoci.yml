@@ -1,0 +1,40 @@
+---
+
+- name: Install showoci
+  hosts: all
+
+  vars:
+    showoci_cloudshell_dir: "{{ lookup('env', 'HOME') }}/showoci_cloudshell"
+
+  tasks:
+    - name: showoci | ensure showoci directory are present
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        mode: '0755'
+      with_items:
+      - "{{ showoci_cloudshell_dir }}"
+      - "{{ showoci_cloudshell_dir }}/report"
+
+    - name: showoci | ensure showoci base dir and additional scripts are present
+      copy:
+        src: ../_showoci_helpers/
+        dest: "{{ showoci_cloudshell_dir }}"
+        mode: '0755'
+
+    - name: showoci | downloads latest version of showoci from GitHub master branch
+      get_url:
+        url: "https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/showoci/{{ item }}"
+        force: yes
+        mode: '0755'
+        dest: "{{ showoci_cloudshell_dir }}/{{ item }}"
+      with_items:
+      - README.md
+      - CHANGELOG.rst
+      - showoci.py
+      - showoci_data.py
+      - showoci_output.py
+      - showoci_service.py
+      - showoci_to_se.py
+
+...
