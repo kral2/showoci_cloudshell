@@ -1,6 +1,6 @@
 # Installer for showoci on OCI Cloud Shell
 
-## Automatically Download, Extract and Install showoci on your cloudshell session
+## Automatically install showoci on your Cloud Shell session and generate a combined Excel file
 
 [![release](https://img.shields.io/github/v/release/kral2/showoci_cloudshell?colorB=2067b8)](https://github.com/kral2/)
 [![license](https://img.shields.io/github/license/kral2/showoci_cloudshell?colorB=2067b8)](https://github.com/kral2/showoci_cloudshell)
