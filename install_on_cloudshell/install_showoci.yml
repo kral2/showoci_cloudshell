@@ -17,13 +17,13 @@
       - "{{ showoci_cloudshell_dir }}/reports"
 
     - name: showoci | ensure showoci base dir and additional scripts are present
-      copy:
+      ansible.builtin.copy:
         src: ../_showoci_helpers/
         dest: "{{ showoci_cloudshell_dir }}"
         mode: '0755'
 
     - name: showoci | downloads latest version of showoci from GitHub master branch
-      get_url:
+      ansible.builtin.get_url:
         url: "https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/showoci/{{ item }}"
         force: yes
         mode: '0755'

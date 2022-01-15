@@ -23,6 +23,8 @@ curl -L --silent https://raw.github.com/kral2/showoci_cloudshell/main/bootstrap.
 
 It will download the latest version of showoci and its helpers in the current user's home directory No sudo rights required. Tailored for [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm).
 
+To update your local installation to a newer version, simply run the command above again. Scripts will be updated without impacting the content of the `reports` folder.
+
 ## Run a report
 
 Launch the reporting script and provide a label for your extract (e.g the tenant name).
