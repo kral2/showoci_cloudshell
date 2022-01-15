@@ -32,6 +32,12 @@ cd showoci_cloudshell
 ./showoci_report_to_xlsx.sh mytenant
 ```
 
+> **NOTE**
+>
+> The report can take up to 15 minutes ... ìt depends on the number of objects deployed on your tenancy. ìn that case, the Cloud Shell session may disconnect because of inactivity: stay close to your keyboard and give it some keystrokes to avoid that.
+>
+> `¯\_(ツ)_/¯`
+
 At the end of showoci script execution, you will find in the `showoci_cloudshell/report/mytenant` folder:
 
 - an excel file will the collected data loaded from the CSV files
