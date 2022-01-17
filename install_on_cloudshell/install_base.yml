@@ -1,13 +1,14 @@
 ---
 
 - name: Preparing the base environment
-  hosts: all
+  hosts: localhost
 
   tasks:
-    - name: Ensure python additional modules for showoci are present | pandas, xlsxwriter
+    - name: Ensure python dependencies are present | merge-CSV-to-Excel
       pip:
         name:
           - pandas
           - xlsxwriter
         executable: pip3
+
 ...

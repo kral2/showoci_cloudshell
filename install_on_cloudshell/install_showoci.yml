@@ -1,7 +1,7 @@
 ---
 
 - name: Install showoci
-  hosts: all
+  hosts: localhost
 
   vars:
     showoci_cloudshell_dir: "{{ lookup('env', 'HOME') }}/showoci_cloudshell"
@@ -16,7 +16,7 @@
       - "{{ showoci_cloudshell_dir }}"
       - "{{ showoci_cloudshell_dir }}/reports"
 
-    - name: showoci | ensure showoci base dir and additional scripts are present
+    - name: showoci | ensure showoci helper scripts are present
       ansible.builtin.copy:
         src: ../_showoci_helpers/
         dest: "{{ showoci_cloudshell_dir }}"
