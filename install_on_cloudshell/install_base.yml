@@ -4,7 +4,7 @@
   hosts: localhost
 
   tasks:
-    - name: Ensure python dependencies are present | merge-CSV-to-Excel
+    - name: Ensure python dependencies for merge-CSV-to-Excel are present | pandas, xlsxwriter
       pip:
         name:
           - pandas
