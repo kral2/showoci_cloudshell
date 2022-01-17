@@ -7,32 +7,39 @@
 #   -csv: export to CSV files
 #
 #   showoci_report_to_xlsx.sh arguments:
-#   $1 is the prefix for CSV files naming (mandatory argument)
+#   $1 is the prefix for CSV files naming
 #
 #   sample command:
 #   $./showoci_report_to_xlsx.sh mytenant
 
-DATE=`date '+%Y-%m-%d_%H-%M'`
-APPDIR=${HOME}/showoci_cloudshell
-REPORT_DIR=${APPDIR}/reports/${1}
-CSV_DIR=${REPORT_DIR}/csv
-JSON_DIR=${REPORT_DIR}/json
-
-OUTPUT_FILE=${REPORT_DIR}/${DATE}_${1}_showoci_report.txt
-JSON_FILE=${JSON_DIR}/${DATE}_${1}_showoci_report.json
-CSV_FILE=${CSV_DIR}/${DATE}_${1}
-
-# using delegation token authentication for OCI API
-SHOWOCI_PARAM="-dt -mc -a"
-
-# ensure a tenant name is provided
-if [ "$#" -eq 0 ]; then
-    echo "Please provide script arguments:"
-    echo "1st argument (mandatory): CSV filenames prefix"
+usage() {
+    echo "Please provide only one arguments: CSV filenames prefix"
     echo "sample command:"
     echo "./showoci_report_to_xlsx.sh mytenant"
     exit 1
+}
+
+PREFIX="$1"
+
+# ensure a tenant name is provided
+if [ "$#" -eq 0 ]; then
+    PREFIX="mytenant"
+elif [ "$#" -gt 1 ]; then
+    usage
 fi
+
+DATE=`date '+%Y-%m-%d_%H-%M'`
+APPDIR=${HOME}/showoci_cloudshell
+REPORT_DIR=${APPDIR}/reports/${PREFIX}
+CSV_DIR=${REPORT_DIR}/csv
+JSON_DIR=${REPORT_DIR}/json
+
+OUTPUT_FILE=${REPORT_DIR}/${DATE}_${PREFIX}_showoci_report.txt
+JSON_FILE=${JSON_DIR}/${DATE}_${PREFIX}_showoci_report.json
+CSV_FILE=${CSV_DIR}/${DATE}_${PREFIX}
+
+# using delegation token authentication for OCI API
+SHOWOCI_PARAM="-dt -mc -a"
 
 # create report folder structure
 mkdir -p ${REPORT_DIR}
