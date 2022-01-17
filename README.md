@@ -18,7 +18,7 @@
 Just run the command below on your Cloud Shell session. This is the fastest and simplest way to get access to `showoci` and its helper tools on OCI Cloud Shell.
 
 ``` shell
-curl -L --silent https://raw.github.com/kral2/showoci_cloudshell/main/bootstrap.sh | bash
+curl -L --silent https://raw.github.com/kral2/showoci_cloudshell/main/install | bash
 ```
 
 It will download the latest version of `showoci` and its helper tools in the current user's home directory. No sudo rights required, tailored for OCI Cloud Shell limited administrative rights.
