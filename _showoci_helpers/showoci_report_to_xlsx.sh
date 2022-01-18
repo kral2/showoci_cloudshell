@@ -56,9 +56,7 @@ echo "# xlsx output file created in ${REPORT_DIR}"
 echo "###################################################################################"
 echo "Please Wait ..."
 
-if [ "$#" -eq 1 ]; then
-    $APPDIR/showoci.py $SHOWOCI_PARAM -sjf $JSON_FILE -csv $CSV_FILE > $OUTPUT_FILE 2>&1
-fi
+$APPDIR/showoci.py $SHOWOCI_PARAM -sjf $JSON_FILE -csv $CSV_FILE > $OUTPUT_FILE 2>&1
 
 # Print Errors on screen
 grep -i Error $OUTPUT_FILE
@@ -85,7 +83,7 @@ echo "##########################################################################
 echo "# Merge csv files to xlsx file and compress raw data (/csv and /json)"
 echo "###################################################################################"
 
-python3 $APPDIR/merge-CSVs-to-Excel.py $1 ${CSV_DIR} ${REPORT_DIR} >> $OUTPUT_FILE 2>&1
+python3 $APPDIR/merge-CSVs-to-Excel.py ${PREFIX} ${CSV_DIR} ${REPORT_DIR} >> $OUTPUT_FILE 2>&1
 python3 $APPDIR/folder_to_archive.py ${CSV_DIR}.tgz ${CSV_DIR} >> $OUTPUT_FILE 2>&1
 python3 $APPDIR/folder_to_archive.py ${JSON_DIR}.tgz ${JSON_DIR} >> $OUTPUT_FILE 2>&1
 
